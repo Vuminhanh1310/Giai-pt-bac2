@@ -17,24 +17,29 @@ function calPTB2() {
 
     console.log(detal);
 
-    sqrtDetal = Math.sqrt(detal)
-
-    console.log(sqrtDetal);
-
-    x0 = -b / (2 * a);
-
-    x1 = ( -b + sqrtDetal)/ (2 * a);
-
-    x2 = (-b - sqrtDetal)/ (2 * a);
-
     if (a!==0 && detal < 0) {
             document.getElementById('ketqua').innerHTML = "Phương trình vô nghiệm ";
         }
+
     if (a!==0 && detal == 0) {
-        document.getElementById('ketqua').innerHTML = "Phương trình có 1 nghiệm x = " + " "+x0;
+
+            x0 = -b / (2 * a);
+
+            document.getElementById('ketqua').innerHTML = "Phương trình có 1 nghiệm x = " + " "+x0;
     }
+
     if (a!==0 && detal > 0) {
-        document.getElementById('ketqua').innerHTML = "Phương trình có 2 nghiệm: x1 = " + " " + x1
+
+            SQRTDetal = Math.sqrt(detal)
+
+            sqrtDetal = SQRTDetal.toFixed(0);
+
+            x1 = ( -b + sqrtDetal)/ (2 * a);
+
+            x2 = (-b - sqrtDetal)/ (2 * a);
+
+            document.getElementById('ketqua').innerHTML = "Phương trình có 2 nghiệm: x1 = " + " " + x1
             + "và x2 = " + " " + x2;
     }
+
 }
